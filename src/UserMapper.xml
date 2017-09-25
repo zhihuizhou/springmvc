@@ -4,13 +4,30 @@
         "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 
 <mapper namespace="com.ebnew.pojo.User">
-
+    
     <!--根据用户名模糊查询-->
     <select id="findListByUsername" parameterType="java.lang.String" resultType="user">
-        select * from user u where u.username =#{_parameter}
+        select * from user u where u.username like concat('%',#{_parameter},'%')
     </select>
 
     <insert id="insert" parameterType="com.ebnew.pojo.User">
-        insert into USER VALUES (#{id},#{username});
+        insert into USER VALUES (#{id},#{username})
     </insert>
+    
+    <select id="findPageByUsername" parameterType="java.lang.String" resultType="user">
+        select * from user u where u.username like concat('%',#{_parameter},'%')
+    </select>
+    
+    <select id="selectUserById" parameterType="java.lang.Integer" resultType="user">
+        select * from user u where u.id = #{id}
+    </select>
+
+    <select id="selectList" resultType="java.util.Map">
+        select * from USER
+    </select>
+
+
+    <select id="selectMap" resultType="java.util.Map">
+        select * from USER where u.username like concat('%',#{_parameter},'%')
+    </select>
 </mapper>

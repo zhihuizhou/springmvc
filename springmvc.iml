@@ -25,5 +25,6 @@
     <orderEntry type="library" name="Spring-4.3.10.RELEASE" level="project" />
     <orderEntry type="library" name="Spring MVC-4.3.10.RELEASE" level="project" />
     <orderEntry type="library" name="springmvc和mybatis整合" level="project" />
+    <orderEntry type="library" name="springmvc加入json支持" level="project" />
   </component>
 </module>

@@ -9,6 +9,7 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="springmvc和mybatis整合" />
+          <element id="library" level="project" name="springmvc加入json支持" />
         </element>
       </element>
     </root>
