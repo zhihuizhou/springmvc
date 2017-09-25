@@ -6,8 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 用户表现层action
@@ -18,23 +21,27 @@ public class UserAction {
     @Autowired
     private UserService userService;
 
-    /**根据用户模糊查询
+    /**
+     * 根据用户模糊查询
+     *
      * @param model
      * @return
      */
     @RequestMapping("/list")
-    public  String list(Model model){
-        List<User> users = userService.selectUsersByUsername("ad");
+    public String list(String username, Model model) {
+        List<User> users = userService.selectUsersByUsername(username);
         model.addAttribute("users", users);
         return "success";
     }
 
-    /**保存用户
+    /**
+     * 保存用户
+     *
      * @param user
      * @return
      */
     @RequestMapping("/insert")
-    public  String insert(User user){
+    public String insert(User user) {
         userService.insertUser(user);
         return "insert";
     }
