@@ -32,6 +32,12 @@ public class UserAction {
     public String list(String username, Model model) {
         List<User> users = userService.selectUsersByUsername(username);
         model.addAttribute("users", users);
+        System.out.println("11111111111111111111");
+        System.out.println("11111111111111111111");
+        System.out.println("11111111111111111111");
+        System.out.println("11111111111111111111");
+        System.out.println("11111111111111111111");
+        System.out.println("2222222222222222222222");
         return "success";
     }
 
