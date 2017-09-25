@@ -50,7 +50,7 @@ public class UserAction {
     @RequestMapping("/insert")
     public String insert(User user) {
         userService.insertUser(user);
-        System.out.println("不想保存你非要保存");
+        System.out.println("保存用户insert");
         return "insert";
     }
 
