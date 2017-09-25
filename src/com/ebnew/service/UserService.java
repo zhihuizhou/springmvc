@@ -3,6 +3,7 @@ package com.ebnew.service;
 import com.ebnew.pojo.User;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 用户业务层接口
@@ -19,4 +20,12 @@ public interface UserService {
      * @param user
      */
     public void insertUser(User user);
+
+    public List<User> selectUserByPage(String username, Integer page, Integer size);
+
+    public User selectUserById(Integer id);
+
+    public List<Map> selectList();
+
+    public Map selectMap();
 }
